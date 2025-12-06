@@ -1,4 +1,4 @@
-import { LoginRequest, ExternalLoginResponse } from '@/pages/api/auth/types';
+import { LoginRequest, ExternalLoginResponse } from '@/types/auth';
 
 export const authAPI = {
   login: async (data: LoginRequest): Promise<ExternalLoginResponse> => {

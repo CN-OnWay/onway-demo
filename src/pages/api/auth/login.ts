@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ExternalLoginResponse, LoginRequest } from './types';
+import { ExternalLoginResponse, LoginRequest } from '@/types/auth';
 
 export default function handler(
   req: NextApiRequest,
