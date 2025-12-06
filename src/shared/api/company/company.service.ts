@@ -1,5 +1,5 @@
 import { Company, UpdateCompanyRequest, CompanyResponse } from './types';
-import { mockCompany, mockCompanyResponse } from '../mocks/company.mock';
+import { mockCompany } from '../mocks/company.mock';
 
 // Mock данные вместо реальных API запросов
 let company = { ...mockCompany };

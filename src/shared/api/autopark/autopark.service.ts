@@ -4,10 +4,10 @@ import {
   Vehicle,
   VehiclesResponse,
 } from './types';
-import { mockVehicles, mockVehiclesResponse } from '../mocks/autopark.mock';
+import { mockVehicles } from '../mocks/autopark.mock';
 
 // Mock данные вместо реальных API запросов
-let vehicles = [...mockVehicles];
+const vehicles = [...mockVehicles];
 
 export const autoparkAPI = {
   // GET /autopark
@@ -66,6 +66,7 @@ export const autoparkAPI = {
           vehicles[index] = {
             ...vehicles[index],
             ...data,
+            status: typeof data.status === 'string' ? data.status === 'active' : data.status ?? vehicles[index].status,
             updated_at: new Date().toISOString(),
           };
           resolve(vehicles[index]);

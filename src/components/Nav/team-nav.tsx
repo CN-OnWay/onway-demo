@@ -11,14 +11,14 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 export function TeamSwitcher({
   teams,
 }: {
   teams: {
     name: string;
-    logo: string;
+    logo: string | StaticImageData;
     plan: string;
   }[];
 }) {

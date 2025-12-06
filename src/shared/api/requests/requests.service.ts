@@ -4,10 +4,10 @@ import {
   UpdateRequestRequest,
   RequestsResponse,
 } from './types';
-import { mockRequests, mockRequestsResponse } from '../mocks/requests.mock';
+import { mockRequests } from '../mocks/requests.mock';
 
 // Mock данные вместо реальных API запросов
-let requests = [...mockRequests];
+const requests = [...mockRequests];
 
 export const requestsAPI = {
   // GET /requests
@@ -58,7 +58,21 @@ export const requestsAPI = {
       setTimeout(() => {
         const index = requests.findIndex(r => r.id === id);
         if (index !== -1) {
-          requests[index] = { ...requests[index], ...data };
+          const updatedRequest: Request = {
+            ...requests[index],
+            dropOffLocation: data.dropOffLocation ?? requests[index].dropOffLocation,
+            email: data.email ?? requests[index].email,
+            name: data.name ?? requests[index].name,
+            pickUpAirport: data.pickUpAirport ?? requests[index].pickUpAirport,
+            pickUpDate: data.pickUpDate 
+              ? { _seconds: Math.floor(new Date(data.pickUpDate).getTime() / 1000), _nanoseconds: 0 }
+              : requests[index].pickUpDate,
+            pickUpTime: data.pickUpTime 
+              ? [data.pickUpTime[0] || requests[index].pickUpTime[0], data.pickUpTime[1] || requests[index].pickUpTime[1], data.pickUpTime[2] || requests[index].pickUpTime[2]]
+              : requests[index].pickUpTime,
+            status: data.status ?? requests[index].status,
+          };
+          requests[index] = updatedRequest;
           resolve(requests[index]);
         } else {
           reject(new Error('Request not found'));

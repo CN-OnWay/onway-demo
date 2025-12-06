@@ -7,11 +7,11 @@ import {
   ApiRoute,
   ApiTransfer,
 } from './types';
-import { mockRoutes, mockTransfers, mockRoutesResponse, getTransfersForRoute } from '../mocks/routes.mock';
+import { mockRoutes, mockTransfers, getTransfersForRoute } from '../mocks/routes.mock';
 
 // Mock данные вместо реальных API запросов
-let routes = [...mockRoutes];
-let transfers = { ...mockTransfers };
+const routes = [...mockRoutes];
+const transfers = { ...mockTransfers };
 
 export const routesAPI = {
   // GET /routes

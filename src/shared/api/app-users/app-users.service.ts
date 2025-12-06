@@ -4,10 +4,10 @@ import {
   UpdateAppUserRequest,
   AppUsersResponse,
 } from './types';
-import { mockAppUsers, mockAppUsersResponse } from '../mocks/app-users.mock';
+import { mockAppUsers } from '../mocks/app-users.mock';
 
 // Mock данные вместо реальных API запросов
-let appUsers = [...mockAppUsers];
+const appUsers = [...mockAppUsers];
 
 export const appUsersAPI = {
   // GET /app-users

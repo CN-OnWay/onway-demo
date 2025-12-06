@@ -4,10 +4,10 @@ import {
   UpdateStaffRequest,
   StaffResponse,
 } from './types';
-import { mockStaff, mockStaffResponse } from '../mocks/staff.mock';
+import { mockStaff } from '../mocks/staff.mock';
 
 // Mock данные вместо реальных API запросов
-let staff = [...mockStaff];
+const staff = [...mockStaff];
 
 export const staffAPI = {
   // GET /staff

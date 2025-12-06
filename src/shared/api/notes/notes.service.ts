@@ -4,10 +4,10 @@ import {
   UpdateNoteRequest,
   NotesResponse,
 } from './types';
-import { mockNotes, mockNotesResponse } from '../mocks/notes.mock';
+import { mockNotes } from '../mocks/notes.mock';
 
 // Mock данные вместо реальных API запросов
-let notes = [...mockNotes];
+const notes = [...mockNotes];
 
 export const notesAPI = {
   // GET /notes
