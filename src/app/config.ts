@@ -18,7 +18,7 @@ export const navigation = {
     {
       name: 'Company Name',
       logo: companyImg,
-      plan: 'No limints',
+      plan: '',
     },
   ],
   navMain: [
@@ -34,7 +34,7 @@ export const navigation = {
         },
         {
           title: 'Export',
-          url: '/dashboard/export',
+          url: '/',
         },
       ],
     },
@@ -74,11 +74,11 @@ export const navigation = {
       items: [
         {
           title: 'General',
-          url: '/settings/general',
+          url: '/',
         },
         {
           title: 'Integrations',
-          url: '/settings/integrations',
+          url: '/',
         },
       ],
     },
